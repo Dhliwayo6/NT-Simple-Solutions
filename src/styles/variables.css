@@ -1,0 +1,65 @@
+/*  NT Simple Solutions — Design Tokens  */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+:root {
+  /* Brand Colors */
+  --color-purple:        #6B21A8;
+  --color-purple-light:  #9333EA;
+  --color-purple-mid:    #7C3AED;
+  --color-purple-dark:   #3B0764;
+  --color-purple-deeper: #1E0749;
+  --color-dark:          #0D0120;
+  --color-orange:        #F97316;
+  --color-orange-light:  #FB923C;
+  --color-amber:         #F59E0B;
+  --color-yellow:        #FACC15;
+  --color-white:         #FFFFFF;
+  --color-off-white:     #F3F0FF;
+  --color-text-muted:    rgba(255, 255, 255, 0.55);
+  --color-text-body:     rgba(255, 255, 255, 0.80);
+  --color-border:        rgba(147, 51, 234, 0.25);
+  --color-border-orange: rgba(249, 115, 22, 0.35);
+
+  /* Sidebar */
+  --sidebar-width-open:    280px;
+  --sidebar-width-closed:  68px;
+  --sidebar-bg:            #160430;
+  --sidebar-border:        rgba(147, 51, 234, 0.30);
+  --sidebar-transition:    width 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Typography */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-heading: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Spacing scale */
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   1.5rem;
+  --space-xl:   2rem;
+  --space-2xl:  3rem;
+  --space-3xl:  5rem;
+  --space-4xl:  6rem;
+
+  --content-max-width: 1400px;
+  --section-pad-x: clamp(1rem, 3vw, 2.5rem);
+
+  /* Radii */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+  --radius-xl:  20px;
+  --radius-pill: 100px;
+
+  /* Shadows */
+  --shadow-orange: 0 8px 30px rgba(249, 115, 22, 0.45);
+  --shadow-purple: 0 4px 24px rgba(107, 33, 168, 0.35);
+  --shadow-card:   0 4px 32px rgba(0, 0, 0, 0.35);
+
+  /* Z-index layers */
+  --z-sidebar:  200;
+  --z-nav:      100;
+  --z-overlay:   50;
+  --z-content:    1;
+}
