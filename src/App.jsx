@@ -6,7 +6,7 @@ import "./styles/globals.css";
 import "./styles/Sidebar.css";
 import "./styles/PageHero.css";
 import "./styles/sections.css";
-// import "/styles/MobileHeader.css"
+import "./styles/MobileHeader.css"
 
 import Sidebar from "./components/layout/Sidebar";
 import MobileHeader from "./components/layout/MobileHeader";
