@@ -6,8 +6,10 @@ import "./styles/globals.css";
 import "./styles/Sidebar.css";
 import "./styles/PageHero.css";
 import "./styles/sections.css";
+// import "/styles/MobileHeader.css"
 
 import Sidebar from "./components/layout/Sidebar";
+import MobileHeader from "./components/layout/MobileHeader";
 
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -23,8 +25,8 @@ function ScrollToTop() {
 }
 
 function AppLayout() {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(true);
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
   const { pathname } = useLocation();
 
@@ -52,14 +54,23 @@ function AppLayout() {
 
   return (
     <div className="app-layout">
+
       <Sidebar
         collapsed={isMobile ? false : sidebarCollapsed}
         mobileOpen={mobileSidebarOpen}
         onToggle={toggleSidebar}
       />
 
+      <MobileHeader
+        isOpen={mobileSidebarOpen}
+        onToggle={toggleSidebar}
+      />
+
       {mobileSidebarOpen && (
-        <div className="sidebar-overlay" onClick={() => setMobileSidebarOpen(false)} />
+        <div
+          className="sidebar-overlay"
+          onClick={() => setMobileSidebarOpen(false)}
+        />
       )}
 
       <main className={mainClass}>

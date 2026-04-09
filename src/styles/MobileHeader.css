@@ -1,0 +1,132 @@
+/* Mobile Header  */
+
+/* Hidden on desktop — only shown on mobile */
+.mobile-header {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: calc(var(--z-sidebar) - 1);  /* just below sidebar */
+    height: 60px;
+    padding: 0 16px;
+    background: rgba(13, 1, 32, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--sidebar-border);
+  }
+
+  /* Hamburger button */
+  .mobile-header__hamburger {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(147, 51, 234, 0.18);
+    border: 1px solid var(--sidebar-border);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .mobile-header__hamburger.open {
+    background: rgba(249, 115, 22, 0.22);
+    border-color: var(--color-border-orange);
+    transform: rotate(90deg);
+  }
+
+  .mobile-header__hamburger:active {
+    transform: scale(0.92);
+  }
+
+  /* Brand / Logo */
+  .mobile-header__brand {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    min-width: 0;
+  }
+
+  .mobile-header__logo-icon {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 28px;
+  }
+
+  .mobile-header__logo-icon span {
+    display: block;
+    height: 8px;
+    border-radius: 4px;
+  }
+
+  .mobile-header__logo-icon span:nth-child(1) { background: var(--color-orange); }
+  .mobile-header__logo-icon span:nth-child(2) { background: var(--color-purple); }
+  .mobile-header__logo-icon span:nth-child(3) { background: var(--color-purple-mid); }
+
+  .mobile-header__brand-name {
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--color-white);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-header__brand-name em {
+    color: var(--color-orange);
+    font-style: normal;
+  }
+
+  .mobile-header__brand-sub {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+  }
+
+  /* Quote CTA */
+  .mobile-header__cta {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: linear-gradient(135deg, var(--color-orange), var(--color-amber));
+    border: none;
+    border-radius: 8px;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .mobile-header__cta:active {
+    opacity: 0.85;
+    transform: scale(0.96);
+  }
+
+  /* Push page content down so it clears the fixed header */
+  .main-content {
+    padding-top: 60px;
+  }
+}

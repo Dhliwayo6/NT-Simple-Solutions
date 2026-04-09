@@ -65,11 +65,17 @@ const Icon = ({ name }) => {
   return icons[name] ?? null;
 };
 
-export default function Sidebar({ collapsed, onToggle }) {
+export default function Sidebar({ collapsed, mobileOpen, onToggle }) {
   const navigate = useNavigate();
 
+  const classList = [
+    "sidebar",
+    collapsed   ? "collapsed"   : "",
+    mobileOpen  ? "mobile-open" : "",
+  ].filter(Boolean).join(" ");
+
   return (
-    <aside className={`sidebar${collapsed ? " collapsed" : ""}`}>
+    <aside className={classList}>
       <button
         className="sidebar__toggle"
         onClick={onToggle}
@@ -80,9 +86,7 @@ export default function Sidebar({ collapsed, onToggle }) {
 
       <div className="sidebar__logo" onClick={() => navigate("/")}>
         <div className="sidebar__logo-icon">
-          <span />
-          <span />
-          <span />
+          <span /><span /><span />
         </div>
         <div className="sidebar__logo-text">
           <strong><em>NT</em> Simple Solutions™</strong>

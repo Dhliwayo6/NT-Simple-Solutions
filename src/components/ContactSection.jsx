@@ -2,6 +2,7 @@ import { useState } from "react";
 import AnimatedSection from "./ui/AnimatedSection";
 import { CONTACT_INFO } from "./../data/siteData";
 import "./../styles/sections.css";
+import { FaCheck } from "react-icons/fa";
 
 const SERVICES_OPTIONS = [
   "Construction & Execution",
@@ -66,7 +67,7 @@ export default function Contact() {
           <div className="contact__form-card">
             {sent ? (
               <div className="contact__success">
-                <div className="contact__success-icon">✅</div>
+                <div className="contact__success-icon"><FaCheck /></div>
                 <h3 className="contact__success-heading display-heading">
                   MESSAGE SENT!
                 </h3>
