@@ -36,7 +36,7 @@ export const NAV_LINKS = [
   { id: "home",  label: "Home", icon: "home", path: "/" },
   { id: "about", label: "About", icon: "about", path: "/about" },
   { id: "services", label: "Services", icon: "services", path: "/services" },
-  { id: "projects", label: "Gallery",  icon: "gallery", path: "/projects" },
+  { id: "projects", label: "Projects",  icon: "gallery", path: "/projects" },
   { id: "contact", label: "Contact", icon: "contact", path: "/contact" },
 ];
 
@@ -133,4 +133,26 @@ export const CONTACT_INFO = [
   { icon: <FaInstagram />, label: "Instagram", value: "@ntsimplesolutionsconstruction" },
   { icon: <FaTiktok />, label: "TikTok", value: "@ntsimplesolutions" },
   { icon: <FaWhatsapp />, label: "WhatsApp", value: "0777 666 550", link: "https://wa.me/263777666550" },
+];
+
+export const GALLERY_IMAGES = [
+  { src: project, alt: "Site Preparation and Foundation Work", caption: "Site Preparation and Foundation Work" },
+  { src: project1, alt: "Site Preparation and Foundation Work", caption: "Site Preparation and Foundation Work" },
+  { src: project2, alt: "Residential Construction in Progress", caption: "Residential Construction in Progress" },
+  { src: project3, alt: "Commercial Construction in Progress", caption: "Commercial Construction in Progress" },
+  { src: project4, alt: "Roofing and Structural Completion", caption: "Roofing and Structural Completion" },
+  { src: project5, alt: "Site Preparation and Foundation Work", caption: "Site Preparation and Foundation Work" },
+  { src: project6, alt: "Residential Construction in Progress", caption: "Residential Construction in Progress" },
+  { src: project7, alt: "Residential Construction in Progress", caption: "Residential Construction in Progress" },
+  { src: project8, alt: "Completed Residential Development", caption: "Completed Residential Development" },
+  { src: project9, alt: "Completed Residential Development", caption: "Completed Residential Development" },
+  { src: project10, alt: "Completed Residential Development", caption: "Completed Residential Development" },
+  { src: project11, alt: "Completed Residential Development", caption: "Completed Residential Development" },
+  { src: project12, alt: "Roofing and Structural Completion", caption: "Roofing and Structural Completion" },
+  { src: project13, alt: "Roofing and Structural Completion", caption: "Roofing and Structural Completion" },
+  { src: project14, alt: "Site Supervision and Quality Control", caption: "Site Supervision and Quality Control" },
+  { src: project15, alt: "Residential Construction in Progress", caption: "Residential Construction in Progress" },
+  { src: project16, alt: "Roofing and Structural Completion", caption: "Roofing and Structural Completion" },
+  { src: project17, alt: "Completed Residential Development", caption: "Completed Residential Development" },
+  { src: project18, alt: "Completed Residential Development", caption: "Completed Residential Development" },
 ];

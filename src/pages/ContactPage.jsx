@@ -1,17 +1,19 @@
-import PageHero from "./../components/ui/PageHero";
-import Contact from "./../components/ContactSection";
-import Footer from "./../components/layout/Footer";
+import PageHero from "../components/ui/PageHero";
+import Contact from "../components/ContactSection";
+
+// Hero image import
+import heroBg from "../images/5.jpeg";
 
 export default function ContactPage() {
   return (
-    <>
+    <div className="contact-page">
       <PageHero
-        label="Get In Touch"
-        title="START YOUR PROJECT"
-        subtitle="Looking forward to handling your project. Reach out and let's build something great."
+        label="Get in Touch"
+        title="Get in Touch"
+        subtitle="Tell us about your project and we will get back to you within one business day."
+        bgImage={heroBg}
       />
       <Contact />
-      <Footer />
-    </>
+    </div>
   );
 }

@@ -1,65 +1,101 @@
 /*  NT Simple Solutions — Design Tokens  */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@200..700&display=swap');
 
 :root {
   /* Brand Colors */
-  --color-purple:        #6B21A8;
-  --color-purple-light:  #9333EA;
-  --color-purple-mid:    #7C3AED;
-  --color-purple-dark:   #3B0764;
-  --color-purple-deeper: #1E0749;
-  --color-dark:          #0D0120;
-  --color-orange:        #F97316;
-  --color-orange-light:  #FB923C;
-  --color-amber:         #F59E0B;
-  --color-yellow:        #FACC15;
-  --color-white:         #FFFFFF;
-  --color-off-white:     #F3F0FF;
-  --color-text-muted:    rgba(255, 255, 255, 0.55);
-  --color-text-body:     rgba(255, 255, 255, 0.80);
-  --color-border:        rgba(147, 51, 234, 0.25);
-  --color-border-orange: rgba(249, 115, 22, 0.35);
+  --color-primary:        #5B2D8E;
+  --color-primary-dark:   #3D1A6B;
+  --color-accent:         #F5A623;
+  --color-accent-hover:   #D4891A;
+  --color-white:          #FFFFFF;
+  --color-off-white:      #F8F6FB;
+  --color-text:           #1A1A2E;
+  --color-text-muted:     #6B6B8A;
+  --color-border:         #E2DAF0;
+  --color-dark-section:   #1A0A2E;
 
-  /* Sidebar */
-  --sidebar-width-open:    280px;
+  /* Theme Compatibility Aliases */
+  --color-dark:            var(--color-dark-section);
+  --color-purple-dark:     var(--color-primary-dark);
+  --color-purple-light:    var(--color-primary);
+  --color-purple-deeper:   #1A0A2E;
+  --color-orange:          var(--color-accent);
+
+  /* Sidebar & Layout */
+  --sidebar-width-open:    240px;
   --sidebar-width-closed:  68px;
-  --sidebar-bg:            #160430;
-  --sidebar-border:        rgba(147, 51, 234, 0.30);
+  --sidebar-bg:            var(--color-primary-dark);
+  --sidebar-border:        var(--color-border);
   --sidebar-transition:    width 0.32s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Typography */
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-heading: 'Syne', sans-serif;
-  --font-body:    'DM Sans', sans-serif;
+  --font-body:            'Inter', sans-serif;
+  --font-heading:         'Oswald', sans-serif;
+  --font-display:         'Oswald', sans-serif;
 
-  /* Spacing scale */
-  --space-xs:   0.25rem;
-  --space-sm:   0.5rem;
-  --space-md:   1rem;
-  --space-lg:   1.5rem;
-  --space-xl:   2rem;
-  --space-2xl:  3rem;
-  --space-3xl:  5rem;
-  --space-4xl:  6rem;
+  /* Type Scale */
+  --text-xs:              0.75rem;   /* 12px */
+  --text-sm:              0.875rem;  /* 14px */
+  --text-base:            1rem;      /* 16px */
+  --text-lg:              1.125rem;  /* 18px */
+  --text-xl:              1.25rem;   /* 20px */
+  --text-2xl:             1.5rem;    /* 24px */
+  --text-3xl:             1.875rem;  /* 30px */
+  --text-4xl:             2.25rem;   /* 36px */
+  --text-5xl:             3rem;      /* 48px */
 
-  --content-max-width: 1400px;
-  --section-pad-x: clamp(1rem, 3vw, 2.5rem);
+  /* Spacing Scale */
+  --space-1:              0.25rem;   /* 4px */
+  --space-2:              0.5rem;    /* 8px */
+  --space-3:              0.75rem;   /* 12px */
+  --space-4:              1rem;      /* 16px */
+  --space-5:              1.25rem;   /* 20px */
+  --space-6:              1.5rem;    /* 24px */
+  --space-7:              1.75rem;   /* 28px */
+  --space-8:              2rem;      /* 32px */
+  --space-9:              2.25rem;   /* 36px */
+  --space-10:             2.5rem;    /* 40px */
+  --space-11:             2.75rem;   /* 44px */
+  --space-12:             3rem;      /* 48px */
+  --space-13:             3.25rem;   /* 52px */
+  --space-14:             3.5rem;    /* 56px */
+  --space-15:             3.75rem;   /* 60px */
+  --space-16:             4rem;      /* 64px */
+  --space-17:             4.25rem;   /* 68px */
+  --space-18:             4.5rem;    /* 72px */
+  --space-19:             4.75rem;   /* 76px */
+  --space-20:             5rem;      /* 80px */
+  --space-21:             5.25rem;   /* 84px */
+  --space-22:             5.5rem;    /* 88px */
+  --space-23:             5.75rem;   /* 92px */
+  --space-24:             6rem;      /* 96px */
+
+  /* Semantic Spacing Scale */
+  --space-xs:             var(--space-2);   /* 8px */
+  --space-sm:             var(--space-3);   /* 12px */
+  --space-md:             var(--space-4);   /* 16px */
+  --space-lg:             var(--space-6);   /* 24px */
+  --space-xl:             var(--space-8);   /* 32px */
+  --space-2xl:            var(--space-12);  /* 48px */
+  --space-3xl:            var(--space-16);  /* 64px */
+  --space-4xl:            var(--space-20);  /* 80px */
+  --section-pad-x:        0;
 
   /* Radii */
-  --radius-sm:  6px;
-  --radius-md:  10px;
-  --radius-lg:  16px;
-  --radius-xl:  20px;
-  --radius-pill: 100px;
+  --radius-sm:            4px;
+  --radius-md:            8px;
+  --radius-lg:            12px;
+  --radius-xl:            16px;
+  --radius-pill:          9999px;
 
   /* Shadows */
-  --shadow-orange: 0 8px 30px rgba(249, 115, 22, 0.45);
-  --shadow-purple: 0 4px 24px rgba(107, 33, 168, 0.35);
-  --shadow-card:   0 4px 32px rgba(0, 0, 0, 0.35);
+  --shadow-orange:        0 8px 30px rgba(245, 166, 35, 0.3);
+  --shadow-purple:        0 4px 24px rgba(91, 45, 142, 0.25);
+  --shadow-card:          0 4px 32px rgba(0, 0, 0, 0.05);
 
   /* Z-index layers */
-  --z-sidebar:  200;
-  --z-nav:      100;
-  --z-overlay:   50;
-  --z-content:    1;
+  --z-sidebar:            200;
+  --z-nav:                100;
+  --z-overlay:            50;
+  --z-content:            1;
 }

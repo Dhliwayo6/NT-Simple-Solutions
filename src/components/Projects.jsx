@@ -1,64 +1,57 @@
-// src/components/sections/Projects.jsx
+import { useNavigate } from "react-router-dom";
 import AnimatedSection from "./ui/AnimatedSection";
-import { PROJECT_IMAGES, CLIENTS } from "./../data/siteData";
-import "./../styles/sections.css";
+import img1 from "../images/2.jpeg";
+import img2 from "../images/3.jpeg";
+import img3 from "../images/4.jpeg";
+import img4 from "../images/5.jpeg";
+import "../styles/sections.css";
+
+const PREVIEW_PROJECTS = [
+  { image: img1, title: "Foundation & Columns", category: "Residential" },
+  { image: img2, title: "Brickwork Construction", category: "Residential" },
+  { image: img3, title: "Commercial Framework", category: "Commercial" },
+  { image: img4, title: "Concrete Slab Support", category: "Residential" },
+];
 
 export default function Projects() {
+  const navigate = useNavigate();
+
   return (
-    <section id="projects" className="projects">
-      {/* Header */}
-      <AnimatedSection>
-        <div className="projects__header">
-          <div>
-            <span className="section-label" style={{ color: "var(--color-orange)" }}>
-              Our Work
-            </span>
-            <h2 className="projects__heading display-heading">
-              SOME OF OUR PROJECTS
+    <section className="projects-preview section-padding">
+      <div className="container">
+        <AnimatedSection>
+          <div className="projects-preview__header">
+            <span className="section-label">Our Work</span>
+            <h2 className="display-heading projects-preview__title">
+              Our Work Speaks for Itself
             </h2>
           </div>
-          <p className="projects__sub">
-            Residential builds, commercial structures, and institutional
-            projects delivered with care and precision.
-          </p>
-        </div>
-      </AnimatedSection>
+        </AnimatedSection>
 
-      {/* Mosaic grid */}
-      <div className="projects__mosaic">
-        {PROJECT_IMAGES.map((img, i) => (
-          <AnimatedSection key={i} delay={i * 0.08}>
-            <div className="project-tile">
-              <a href={img.src} target="_blank" rel="noopener noreferrer">
-                <img src={img.src} alt={img.alt} loading="lazy" />
-
-                <div className="project-tile__overlay">
-                  <div>
-                    <div className="project-tile__category">{img.category}</div>
-                    <div className="project-tile__title">{img.title}</div>
-                  </div>
+        <div className="projects-preview__grid">
+          {PREVIEW_PROJECTS.map((proj, idx) => (
+            <AnimatedSection key={idx} delay={idx * 0.1}>
+              <div className="project-card-preview" onClick={() => navigate("/projects")}>
+                <img
+                  src={proj.image}
+                  alt={proj.title}
+                  className="project-card-preview__img"
+                />
+                <div className="project-card-preview__overlay">
+                  <span className="project-card-preview__category">{proj.category}</span>
+                  <h3 className="project-card-preview__title">{proj.title}</h3>
                 </div>
-              </a>
-            </div>
-          </AnimatedSection>
-        ))}
-      </div>
-
-      {/* Clients panel */}
-      {/* <AnimatedSection delay={0.3}>
-        <div className="projects__clients">
-          <h3 className="projects__clients-heading display-heading">
-            SELECTED CLIENTS
-          </h3>
-          <div className="projects__clients-chips">
-            {CLIENTS.map((c) => (
-              <span key={c} className="projects__client-chip">
-                {c}
-              </span>
-            ))}
-          </div>
+              </div>
+            </AnimatedSection>
+          ))}
         </div>
-      </AnimatedSection> */}
+
+        <AnimatedSection delay={0.2} className="projects-preview__cta-wrapper">
+          <button className="btn-primary" onClick={() => navigate("/projects")}>
+            Explore All Projects
+          </button>
+        </AnimatedSection>
+      </div>
     </section>
   );
 }

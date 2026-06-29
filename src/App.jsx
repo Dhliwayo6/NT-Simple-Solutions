@@ -1,15 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
-import "./styles/variables.css";
-import "./styles/globals.css";
-import "./styles/Sidebar.css";
 import "./styles/PageHero.css";
 import "./styles/sections.css";
-import "./styles/MobileHeader.css"
+import "./styles/Navbar.css";
 
-import Sidebar from "./components/layout/Sidebar";
-import MobileHeader from "./components/layout/MobileHeader";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
@@ -25,55 +22,11 @@ function ScrollToTop() {
 }
 
 function AppLayout() {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(true);
-  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(true);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
-  const { pathname } = useLocation();
-
-  useEffect(() => { setMobileSidebarOpen(false); }, [pathname]);
-
-  useEffect(() => {
-    const onResize = () => {
-      const mobile = window.innerWidth <= 900;
-      setIsMobile(mobile);
-      if (!mobile) setMobileSidebarOpen(false);
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  const toggleSidebar = () => {
-    if (isMobile) setMobileSidebarOpen((p) => !p);
-    else setSidebarCollapsed((p) => !p);
-  };
-
-  const mainClass = [
-    "main-content",
-    !isMobile && sidebarCollapsed ? "sidebar-collapsed" : "",
-  ].filter(Boolean).join(" ");
-
   return (
     <div className="app-layout">
+      <Navbar />
 
-      <Sidebar
-        collapsed={isMobile ? false : sidebarCollapsed}
-        mobileOpen={mobileSidebarOpen}
-        onToggle={toggleSidebar}
-      />
-
-      <MobileHeader
-        isOpen={mobileSidebarOpen}
-        onToggle={toggleSidebar}
-      />
-
-      {mobileSidebarOpen && (
-        <div
-          className="sidebar-overlay"
-          onClick={() => setMobileSidebarOpen(false)}
-        />
-      )}
-
-      <main className={mainClass}>
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -83,6 +36,8 @@ function AppLayout() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
+
+      <Footer />
     </div>
   );
 }

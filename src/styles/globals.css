@@ -13,13 +13,27 @@ html {
 }
 
 body {
-  background-color: var(--color-dark);
-  color: var(--color-white);
   font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-off-white);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -34,11 +48,6 @@ button {
   background: none;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
 ul, ol {
   list-style: none;
 }
@@ -49,34 +58,142 @@ select {
   font-family: var(--font-body);
 }
 
-/* Utility Classes  */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Reduced Motion Reset */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/* Layout Shell */
+.main-content {
+  width: 100%;
+  padding-top: 72px;
+  min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding-top: 80px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+.section-padding {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+  }
+}
+
+/* Shared Button Styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: background-color 150ms ease;
+  font-family: var(--font-body);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  border-radius: 4px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+  font-family: var(--font-body);
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Utility Classes */
 .section-label {
-  font-family: var(--font-display);
-  font-size: 12px;
-  color: var(--color-orange);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  color: var(--color-accent);
   letter-spacing: 4px;
   text-transform: uppercase;
   display: block;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-4);
 }
 
 .display-heading {
-  font-family: var(--font-display);
-  line-height: 0.95;
-  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-text);
 }
 
 .section-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-xl);
+  padding: 0 var(--space-6);
 }
 
-.section-padding {
-  padding: var(--space-4xl) var(--space-xl);
+@media (min-width: 768px) {
+  .section-wrapper {
+    padding: 0 var(--space-8);
+  }
 }
 
-/* Animations  */
+/* Animations */
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.4; transform: scale(0.85); }

@@ -1,77 +1,31 @@
+import { Link } from "react-router-dom";
 import AnimatedSection from "./ui/AnimatedSection";
-import "./../styles/sections.css";
-import { FaBullseye, FaRocket } from "react-icons/fa";
+import aboutImg from "../images/8.jpeg";
+import "../styles/sections.css";
 
-export default function About() {
+export default function AboutSection() {
   return (
-    <section id="about" className="about">
-      <div className="about__grid">
-        {/* Left — brand card */}
-        <AnimatedSection>
-          <div className="about__card">
-            <div className="about__card-watermark">WHO WE ARE</div>
-            <h2 className="about__card-heading display-heading">
-              COMPANY OVERVIEW
+    <section className="about-preview section-padding">
+      <div className="container">
+        <div className="about-preview__grid">
+          <AnimatedSection className="about-preview__image-col">
+            <img
+              src={aboutImg}
+              alt="NT Simple Solutions Construction Team Site"
+              className="about-preview__img"
+            />
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.15} className="about-preview__content-col">
+            <span className="about-preview__label">About Us</span>
+            <h2 className="display-heading about-preview__title">
+              One Team. Total Accountability.
             </h2>
-            <p className="about__card-text">
-              At <strong>NT Simple Solutions Construction</strong>, we believe
-              world-class construction and design should be straightforward for
-              the client. Founded on turning complex challenges into clear,
-              deliverable outcomes, we operate as a unified powerhouse merging
-              expert Architectural Vision, rigorous Structural Engineering,
-              proactive Project Management, and precise Costing Analysis under
-              one roof.
+            <p className="about-preview__text">
+              We were founded on the principle of turning complex challenges into clear, deliverable outcomes. We merge expert architectural vision, rigorous structural engineering, proactive project management, and precise costing under one roof — so you deal with one team and one bill, not five separate firms.
             </p>
-            <div className="about__card-highlight">
-              One team. One point of accountability. Superior execution.
-            </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Right — vision / mission / values */}
-        <AnimatedSection delay={0.18}>
-          <span className="about__info-label section-label">Our Foundation</span>
-          <h2 className="about__info-heading display-heading">
-            VISION, MISSION
-            <br />&amp; VALUES
-          </h2>
-
-          <div className="about__cards-stack">
-            <div className="about__mini-card">
-              <span className="about__mini-card-icon"><FaBullseye /></span>
-              <div>
-                <div className="about__mini-card-title">Vision</div>
-                <p className="about__mini-card-text">
-                  To be the leading single source for construction solutions,
-                  building trust and structures that stand the test of time.
-                </p>
-              </div>
-            </div>
-
-            <div className="about__mini-card">
-              <span className="about__mini-card-icon"><FaRocket /></span>
-              <div>
-                <div className="about__mini-card-title">Mission</div>
-                <p className="about__mini-card-text">
-                  To simplify the complex process of construction, providing
-                  clear, integrated solutions with absolute transparency and
-                  accountability - turning client visions into enduring
-                  structures.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="about__values">
-            {["Integrity", "Integration", "Precision", "Clarity", "Accountability"].map(
-              (v) => (
-                <span key={v} className="about__value-tag">
-                  {v}
-                </span>
-              )
-            )}
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
+        </div>
       </div>
     </section>
   );
